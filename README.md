@@ -1,10 +1,13 @@
 # 🏅 Sports Person Classifier
+
 ![celeb](./ui.jpg)
+
 A machine learning web app that classifies sports celebrities from images using face and eye detection.
 
 ## 🚀 Live Demo
-- **Frontend:** [Render](https://your-app.onrender.com)
-- **Backend API:** [Hugging Face Spaces](https://tinegadev-sports-person-classifier.hf.space)
+
+- **Frontend:** [sportspersonclassifier-i1gv.onrender.com](https://sportspersonclassifier-i1gv.onrender.com)
+- **Backend API:** [tinegadev-sports-person-classifier.hf.space](https://tinegadev-sports-person-classifier.hf.space)
 
 ---
 
@@ -20,11 +23,14 @@ A machine learning web app that classifies sports celebrities from images using 
 ---
 
 ## 🏋️ Classified Athletes
-- Virat Kohli
-- Roger Federer
-- Serena Williams
-- Maria Sharapova
-- Lionel Messi
+
+| Athlete | Sport |
+|---------|-------|
+| Virat Kohli | Cricket |
+| Roger Federer | Tennis |
+| Serena Williams | Tennis |
+| Maria Sharapova | Tennis |
+| Lionel Messi | Football |
 
 ---
 
@@ -43,7 +49,7 @@ SportsPersonClassifier/
 │   └── requirements.txt
 ├── model/
 │   └── ...                        # Training notebooks
-├── ui/
+├── UI/
 │   └── ...                        # Frontend (HTML/CSS/JS)
 └── README.md
 ```
@@ -53,12 +59,12 @@ SportsPersonClassifier/
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
-| Frontend | HTML, CSS, JavaScript |
-| Backend | Python, Flask |
+|-------|------------|
+| Frontend | HTML, CSS, JavaScript, Dropzone.js |
+| Backend | Python, Flask, Flask-CORS |
 | ML | Scikit-learn, OpenCV, PyWavelets |
 | Deployment (API) | Hugging Face Spaces (Docker) |
-| Deployment (UI) | Render |
+| Deployment (UI) | Render (Static Site) |
 
 ---
 
@@ -66,7 +72,7 @@ SportsPersonClassifier/
 
 **1. Clone the repo:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/SportsPersonClassifier.git
+git clone https://github.com/tinegachris-o/SportsPersonClassifier.git
 cd SportsPersonClassifier
 ```
 
@@ -81,7 +87,7 @@ pip install -r requirements.txt
 python server.py
 ```
 
-**4. Open `ui/index.html`** in your browser.
+**4. Open `UI/app.html`** in your browser.
 
 ---
 
@@ -102,9 +108,11 @@ image_data: <base64 encoded image>
     "class": "virat_kohli",
     "class_probability": [12.0, 5.0, 75.0, 4.0, 4.0],
     "class_dictionary": {
-      "virat_kohli": 0,
-      "roger_federer": 1,
-      ...
+      "lionel_messi": 0,
+      "maria_sharapova": 1,
+      "roger_federer": 2,
+      "serena_williams": 3,
+      "virat_kohli": 4
     }
   }
 ]
@@ -113,4 +121,5 @@ image_data: <base64 encoded image>
 ---
 
 ## 📄 License
+
 MIT License
